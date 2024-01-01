@@ -12,7 +12,7 @@
     {
       "name": "Test CPP implementation",
       "setup": "cd cpp; mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "build/run_tests",
+      "run": "cpp/build/run_tests",
       "input": "",
       "output": "",
       "comparison": "included",

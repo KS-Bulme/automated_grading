@@ -20,13 +20,14 @@
       "run": "python -m pytest",
       "timeout": 2,
       "points": 5
-    },
+    }
+  ],
+  "__deactivated_tests": [
     {
       "name": "cppcheck",
       "setup": "sudo apt install --assume-yes cppcheck",
-      "skip": "cppcheck --error-exitcode=1 .",
+      "run": "cppcheck --error-exitcode=1 .",
       "timeout": 1,
-      "message": "Currently all linters are skipped.",
       "points": 1
     }
   ]

@@ -15,11 +15,18 @@
       "points": 5
     },
     {
-      "name": "Test Python implementation",
+      "name": "Test Python implementation for smaller inputs",
       "setup": "cd py; sudo apt install python3-pytest",
-      "run": "python -m pytest",
+      "run": "python -m pytest -k 'not slow'",
       "timeout": 0.3,
-      "points": 5
+      "points": 3
+    },
+    {
+      "name": "Test Python implementation for very large inputs",
+      "setup": "cd py; sudo apt install python3-pytest",
+      "run": "python -m pytest -k 'slow'",
+      "timeout": 0.3,
+      "points": 2
     }
   ],
   "__deactivated_tests": [

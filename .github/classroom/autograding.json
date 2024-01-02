@@ -1,18 +1,39 @@
 {
   "tests": [
     {
-      "name": "Test CPP implementation",
+      "name": "Test CPP implementation for input 0",
       "setup": "cd cpp; mkdir -p build && cd build; cmake ..; make -j4",
-      "run": "cpp/build/run_tests",
+      "run": "cpp/build/run_tests [sum_to] --section 'regular use cases'",
       "timeout": 1,
-      "points": 5
+      "points": 1
     },
     {
-      "name": "Test C implementation",
+      "name": "Test CPP implementation for common inputs",
+      "setup": "cd cpp; mkdir -p build && cd build; cmake ..; make -j4",
+      "run": "cpp/build/run_tests [sum_to] --section 'corner cases'",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "Test CPP implementation for UINT32_MAX",
+      "setup": "cd cpp; mkdir -p build && cd build; cmake ..; make -j4",
+      "run": "cpp/build/run_tests [sum_to_slow]",
+      "timeout": 1,
+      "points": 2
+    },
+    {
+      "name": "Test C implementation for smaller inputs",
       "setup": "sudo apt install libcriterion-dev; cd c; clang sum_to.c sum_to_test.c -o run_tests -l criterion",
-      "run": "c/run_tests",
+      "run": "c/run_tests --filter sum_to/fast_test",
       "timeout": 0.3,
-      "points": 5
+      "points": 3
+    },
+    {
+      "name": "Test C implementation for UINT32_MAX",
+      "setup": "sudo apt install libcriterion-dev; cd c; clang sum_to.c sum_to_test.c -o run_tests -l criterion",
+      "run": "c/run_tests --filter sum_to/slow_test",
+      "timeout": 0.3,
+      "points": 2
     },
     {
       "name": "Test Python implementation for smaller inputs",

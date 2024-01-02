@@ -6,6 +6,12 @@ cmake ..
 make -j8  # use 8 processor cores when compiling
 ```
 
+Execute the tests via
+
+```shell
+./run_tests
+```
+
 Experiment with the test-runner provided by Catch2 via
 
 ```shell

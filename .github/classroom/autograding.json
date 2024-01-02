@@ -13,10 +13,21 @@
       "name": "Test CPP implementation",
       "setup": "cd cpp; mkdir -p build && cd build; cmake ..; make -j4",
       "run": "cpp/build/run_tests",
-      "input": "",
-      "output": "",
-      "comparison": "included",
-      "timeout": 10,
+      "timeout": 1,
+      "points": 5
+    },
+    {
+      "name": "Test C implementation",
+      "setup": "sudo apt install libcriterion-dev; cd c; clang sum_to.c sum_to_test.c -o run_tests -l criterion",
+      "run": "c/run_tests",
+      "timeout": 1,
+      "points": 5
+    },
+    {
+      "name": "Test Python implementation",
+      "setup": "cd py; sudo apt install python3-pytest",
+      "run": "python -m pytest",
+      "timeout": 2,
       "points": 5
     }
   ]
